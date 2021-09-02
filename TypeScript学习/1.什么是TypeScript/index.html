@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="路耀广">
+
+
+
+    <meta name="description" content="路耀广的个人博客">
+
+
+    <meta name="keywords" content="路耀广">
+
+
+<title>路耀广的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Luyaoguang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Luyaoguang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title"></h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">路耀广</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">九月 2, 2021&nbsp;&nbsp;19:04:40</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="什么是TypeScript？"><a href="#什么是TypeScript？" class="headerlink" title="什么是TypeScript？"></a>什么是TypeScript？</h3><p>最重要两个特性：</p>
+<ul>
+<li>类型系统</li>
+<li>适用于任何规模</li>
+</ul>
+<h4 id="TypeScript的特性"><a href="#TypeScript的特性" class="headerlink" title="TypeScript的特性"></a>TypeScript的特性</h4><h4 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h4><p>**[类型]**是ts最重要的特性</p>
+<p>Javascript是一门非常灵活的编程语言：</p>
+<ul>
+<li>它没有<strong>类型的约束</strong>，一个变量可以初始化时是字符串，一会又被赋值为数字。</li>
+<li>由于<strong>隐式类型转换</strong>的存在，有的变量的类型很难在运行前就确定</li>
+<li>基于原型的<strong>面对对象编程</strong>，使得原型上的属性和方法可以再运行时被修改</li>
+<li>函数是JS的<strong>一等公民</strong>，可以赋值给变量，也可以作为参数或返回值。</li>
+</ul>
+<p>Ts 的类型系统，在很大程度上弥补了js 的缺点。</p>
+<h5 id="TypeScript是静态类型"><a href="#TypeScript是静态类型" class="headerlink" title="TypeScript是静态类型"></a>TypeScript是静态类型</h5><p>类型系统可以按照**[类型检查时机]<strong>分为</strong>动态类型<strong>和</strong>静态类型**。</p>
+<p><strong>动态类型</strong>是指在运行时才会进行类型检查，这种语言的类型错误往往会导致运行时报错。Js作为一门<strong>解释性语言</strong>，没有编译阶段，所以它是<strong>动态类型</strong>，以下代码在运行时才会报错</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="number">1</span>;</span><br><span class="line">foo.split(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="comment">// Uncaught TypeError: foo.split is not a function</span></span><br><span class="line"><span class="comment">// 运行时会报错（foo.split 不是一个函数），造成线上 bug</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>静态类型</strong>是指编译阶段就能确定每个变量的类型，这种语言的类型错误往往会导致语法错误。Ts在运行前需要先编译为Js，而在编译阶段就会机型<strong>类型检测</strong>，所以Ts是<strong>静态类型</strong>，上述代码在Ts环境环境中在编译阶段就会报错。</p>
+<h5 id="TypeScript是弱类型"><a href="#TypeScript是弱类型" class="headerlink" title="TypeScript是弱类型"></a>TypeScript是弱类型</h5><p>类型系统按照**[是否允许隐式转换]**，可以分为强类型和弱类型。</p>
+<p>以下这段代码不论是在Js还是再Ts中都可以正常运行，运行时会被<strong>隐式转换</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> + <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"><span class="comment">//打印出 &#x27;11&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>所以Ts是完全兼容Js的，它不会修改在运行时的特性，所以它们都是<strong>弱类型</strong></p>
+<h5 id="与标准同步发展"><a href="#与标准同步发展" class="headerlink" title="与标准同步发展"></a>与标准同步发展</h5><p>一个新的语法提案到变成正式标准，需要经历以下几个阶段：</p>
+<ul>
+<li>Stage0：展示阶段，仅仅是提出了讨论、想法，尚未正式提案。</li>
+<li>Stage1：征求意见阶段，提供抽象的API描述，讨论可行性，关键算法等。</li>
+<li>Stage2：草案阶段，使用正式的规范语言精确描述其语法和语义。</li>
+<li>Stage3：候选人阶段，语法的设计工作已经完成，需要浏览器、NodeJs等环境支持，搜集用户反馈。</li>
+<li>Stage4：定案阶段，已准备好将其添加到正式的Es标准中。</li>
+</ul>
+<p>一个语法进入到Stage3阶段后，Ts就会去实现它。一方面，让我们可以尽早的使用到最新的语法，帮助它进入到下一阶段；另一方面，处于Stage3阶段的语法已经比较稳定了，基本不会有语法的变更，所以可以放心使用。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>Ts是添加了类型系统的Js，适用于任何规模的项目</li>
+<li>Ts是一门静态类型、弱类型语言</li>
+<li>Ts是完全兼容Js的，它不会修改Js的运行时特性</li>
+<li>Ts可以编译为Js，然后运行在浏览器、NodeJs等环境</li>
+<li>Ts拥有很多编译选项，类型检测的严格程度由你决定</li>
+<li>Ts可以和Js共存，这意味着Js项目可以渐进式的迁移到Ts</li>
+<li>Ts增强了IDE功能，提供了代码补全、接口提示、跳转到定义、代码重构等能力</li>
+<li>Ts与标准同步，符合最新的Es标准(Stage3)</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>路耀广</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://luyaoguang1992.github.io/TypeScript%E5%AD%A6%E4%B9%A0/1.%E4%BB%80%E4%B9%88%E6%98%AFTypeScript/">https://luyaoguang1992.github.io/TypeScript%E5%AD%A6%E4%B9%A0/1.%E4%BB%80%E4%B9%88%E6%98%AFTypeScript/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/TypeScript%E5%AD%A6%E4%B9%A0/2.%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"></a>
+            
+            
+            <a class="next" rel="next" href="/nodeAPI/process%E6%A8%A1%E5%9D%97/"></a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 路耀广 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

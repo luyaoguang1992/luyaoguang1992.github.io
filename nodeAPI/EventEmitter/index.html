@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="路耀广">
+
+
+
+    <meta name="description" content="路耀广的个人博客">
+
+
+    <meta name="keywords" content="路耀广">
+
+
+<title>路耀广的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Luyaoguang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Luyaoguang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title"></h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">路耀广</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">九月 2, 2021&nbsp;&nbsp;19:04:29</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="EventEmitter"><a href="#EventEmitter" class="headerlink" title="EventEmitter"></a>EventEmitter</h2><p>Node.js 所有的异步 I/O 操作在完成时都会发送一个事件到事件队列。</p>
+<p>Node.js 里面的许多对象都会分发事件：一个 net.Server 对象会在每次有新连接时触发一个事件， 一个 fs.readStream 对象会在文件被打开的时候触发一个事件。 所有这些产生事件的对象都是 <code>events.EventEmitter</code>的实例。</p>
+<h3 id="EventEmitter类"><a href="#EventEmitter类" class="headerlink" title="EventEmitter类"></a>EventEmitter类</h3><p><code>events</code>模块只提供了一个对象：<strong>events.EventEmitter</strong>,它的核心就是<code>事件触发</code>与<code>事件监听</code>功能的封装</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&#x27;events&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> eventEmitter = <span class="keyword">new</span> events.EventEmitter()</span><br></pre></td></tr></table></figure>
+
+<p>EventEmitter 对象如果在实例化时发生错误，会触发 error 事件。当添加新的监听器时，<strong>newListener</strong> 事件会触发，当监听器被移除时，<strong>removeListener</strong> 事件被触发。</p>
+<p>一个简单的使用例子</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//event.js 文件</span></span><br><span class="line"><span class="keyword">const</span> EventEmitter = <span class="built_in">require</span>(<span class="string">&#x27;events&#x27;</span>).EventEmitter; </span><br><span class="line"><span class="keyword">const</span> event = <span class="keyword">new</span> EventEmitter(); </span><br><span class="line">event.on(<span class="string">&#x27;some_event&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;some_event 事件触发&#x27;</span>); </span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    event.emit(<span class="string">&#x27;some_event&#x27;</span>); </span><br><span class="line">&#125;, <span class="number">1000</span>); </span><br><span class="line"><span class="comment">// 1s后   some_event 事件触发</span></span><br></pre></td></tr></table></figure>
+
+<p>EventEmitter 的每个事件由一个事件名和若干个参数组成，事件名是一个字符串，通常表达一定的语义。对于每个事件，EventEmitter 支持 若干个事件监听器。</p>
+<p>当事件触发时，注册到这个事件的事件监听器被依次调用，事件参数作为回调函数参数传递。</p>
+<p>让我们以下面的例子解释这个过程：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&#x27;events&#x27;</span>); </span><br><span class="line"><span class="keyword">const</span> emitter = <span class="keyword">new</span> events.EventEmitter(); </span><br><span class="line">emitter.on(<span class="string">&#x27;someEvent&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">arg1, arg2</span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;listener1&#x27;</span>, arg1, arg2); </span><br><span class="line">&#125;); </span><br><span class="line">emitter.on(<span class="string">&#x27;someEvent&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">arg1, arg2</span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;listener2&#x27;</span>, arg1, arg2); </span><br><span class="line">&#125;); </span><br><span class="line">emitter.emit(<span class="string">&#x27;someEvent&#x27;</span>, <span class="string">&#x27;arg1 参数&#x27;</span>, <span class="string">&#x27;arg2 参数&#x27;</span>); </span><br><span class="line"><span class="comment">// listener1 arg1 参数 arg2 参数</span></span><br><span class="line"><span class="comment">// listener2 arg1 参数 arg2 参数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="addListener-event-listener"><a href="#addListener-event-listener" class="headerlink" title="addListener(event, listener)"></a>addListener(event, listener)</h4><p>为指定事件添加一个监听器。</p>
+<h4 id="on-event-listener"><a href="#on-event-listener" class="headerlink" title="on(event, listener)"></a>on(event, listener)</h4><p>为指定事件注册一个监听器，接收一个字符串 event 和一个回调函数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.on(<span class="string">&#x27;connection&#x27;</span>,  <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;someone connected!&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="once-event-listener"><a href="#once-event-listener" class="headerlink" title="once(event, listener)"></a>once(event, listener)</h4><p>为指定事件注册一个单次监听器，即 监听器最多只会触发一次，触发后立刻解除该监听器。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.once(<span class="string">&#x27;connection&#x27;</span>,  <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Ah, we have our first user!&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="removeListener-event-listener"><a href="#removeListener-event-listener" class="headerlink" title="removeListener(event, listener)"></a>removeListener(event, listener)</h4><p>移除指定事件的某个监听器，监听器必须是该事件已经注册过的监听器。</p>
+<p>它接受两个参数，第一个是事件名称，第二个是回调函数名称。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> callback = <span class="function"><span class="keyword">function</span>(<span class="params">stream</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;someone connected!&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line">server.on(<span class="string">&#x27;connection&#x27;</span>, callback);</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">server.removeListener(<span class="string">&#x27;connection&#x27;</span>, callback);</span><br></pre></td></tr></table></figure>
+
+<h4 id="removeAllListeners-event"><a href="#removeAllListeners-event" class="headerlink" title="removeAllListeners([event])"></a>removeAllListeners([event])</h4><p>移除所有事件的所有监听器， 如果指定事件，则移除指定事件的所有监听器。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 移除所有事件监听器</span></span><br><span class="line">emitter.removeAllListeners()</span><br><span class="line"><span class="comment">// 移除指定事件监听器</span></span><br><span class="line">emitter.removeAllListeners(<span class="string">&#x27;event1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="setMaxListeners-n"><a href="#setMaxListeners-n" class="headerlink" title="setMaxListeners(n)"></a>setMaxListeners(n)</h4><p>默认情况下， EventEmitters 如果你添加的监听器超过 10 个就会输出警告信息。 setMaxListeners 函数用于改变监听器的默认限制的数量。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&#x27;events&#x27;</span>); </span><br><span class="line"><span class="keyword">const</span> emitter = <span class="keyword">new</span> events.EventEmitter(); </span><br><span class="line">emitter.setMaxListeners(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="listeners-event"><a href="#listeners-event" class="headerlink" title="listeners(event)"></a>listeners(event)</h4><p>返回指定事件的监听器数组。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//返回event1下的所有监听器</span></span><br><span class="line">emitter.listeners(<span class="string">&#x27;event1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="emit-event-arg1-…"><a href="#emit-event-arg1-…" class="headerlink" title="emit(event, [arg1], […])"></a>emit(event, [arg1], […])</h4><p>按监听器的顺序执行执行每个监听器，如果事件有注册监听返回 true，否则返回 false。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">emitter.emit(<span class="string">&#x27;event1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h3><h4 id="listenerCount-emitter-event"><a href="#listenerCount-emitter-event" class="headerlink" title="listenerCount(emitter, event)"></a>listenerCount(emitter, event)</h4><p>返回指定事件的监听器数量。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">events.EventEmitter.listenerCount(emitter, eventName) <span class="comment">//已废弃，不推荐</span></span><br><span class="line">events.emitter.listenerCount(eventName) <span class="comment">//推荐</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h4 id="newListener"><a href="#newListener" class="headerlink" title="newListener"></a>newListener</h4><ul>
+<li>event 字符串 事件名称</li>
+<li>listener 事件处理函数</li>
+</ul>
+<p>该事件没添加新的监听器时触发</p>
+<h4 id="removeListener"><a href="#removeListener" class="headerlink" title="removeListener"></a>removeListener</h4><ul>
+<li>event 字符串 事件名称</li>
+<li>listener 事件处理函数</li>
+</ul>
+<p>从指定监听器数组中删除一个监听器。需要注意的是，<strong>此操作将会改变处于被删监听器之后的那些监听器的索引。</strong></p>
+<h3 id="error事件"><a href="#error事件" class="headerlink" title="error事件"></a>error事件</h3><p>EventEmitter 定义了一个特殊的事件 error，它包含了错误的语义，我们在遇到 异常的时候通常会触发 error 事件。</p>
+<p>当 error 被触发时，<strong>EventEmitter 规定如果没有响 应的监听器，Node.js 会把它当作异常，退出程序并输出错误信息。</strong></p>
+<p>我们一般要为会触发 error 事件的对象设置监听器，避免遇到错误后整个程序崩溃。例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&#x27;events&#x27;</span>); </span><br><span class="line"><span class="keyword">const</span> emitter = <span class="keyword">new</span> events.EventEmitter(); </span><br><span class="line">emitter.emit(<span class="string">&#x27;error&#x27;</span>); </span><br></pre></td></tr></table></figure>
+
+<h3 id="继承EventEmitter"><a href="#继承EventEmitter" class="headerlink" title="继承EventEmitter"></a>继承EventEmitter</h3><p>大多数时候我们不会直接使用 EventEmitter，而是在对象中继承它。包括 fs、net、 http 在内的，只要是支持事件响应的核心模块都是 EventEmitter 的子类。</p>
+<p>为什么要这样做呢？原因有两点：</p>
+<ul>
+<li><p>首先，具有某个实体功能的对象实现事件符合语义， 事件的监听和发生应该是一个对象的方法。</p>
+</li>
+<li><p>其次 JavaScript 的对象机制是基于原型的，支持 部分多重继承，继承 EventEmitter 不会打乱对象原有的继承关系。</p>
+</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&#x27;events&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> eventEmitter = <span class="keyword">new</span> events.EventEmitter();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听器 #1</span></span><br><span class="line"><span class="keyword">const</span> listener1 = <span class="function"><span class="keyword">function</span> <span class="title">listener1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&#x27;监听器 listener1 执行。&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听器 #2</span></span><br><span class="line"><span class="keyword">const</span> listener2 = <span class="function"><span class="keyword">function</span> <span class="title">listener2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;监听器 listener2 执行。&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绑定 connection 事件，处理函数为 listener1 </span></span><br><span class="line">eventEmitter.addListener(<span class="string">&#x27;connection&#x27;</span>, listener1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绑定 connection 事件，处理函数为 listener2</span></span><br><span class="line">eventEmitter.on(<span class="string">&#x27;connection&#x27;</span>, listener2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> eventListeners = eventEmitter.listenerCount(<span class="string">&#x27;connection&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(eventListeners + <span class="string">&quot; 个监听器监听连接事件。&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理 connection 事件 </span></span><br><span class="line">eventEmitter.emit(<span class="string">&#x27;connection&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除监绑定的 listener1 函数</span></span><br><span class="line">eventEmitter.removeListener(<span class="string">&#x27;connection&#x27;</span>, listener1);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;listener1 不再受监听。&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 触发连接事件</span></span><br><span class="line">eventEmitter.emit(<span class="string">&#x27;connection&#x27;</span>);</span><br><span class="line"></span><br><span class="line">eventListeners = eventEmitter.listenerCount(<span class="string">&#x27;connection&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(eventListeners + <span class="string">&quot; 个监听器监听连接事件。&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;程序执行完毕。&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 个监听器监听连接事件。</span></span><br><span class="line"><span class="comment">// 监听器 listener1 执行。</span></span><br><span class="line"><span class="comment">// 监听器 listener2 执行。</span></span><br><span class="line"><span class="comment">// listener1 不再受监听。</span></span><br><span class="line"><span class="comment">// 监听器 listener2 执行。</span></span><br><span class="line"><span class="comment">// 1 个监听器监听连接事件。</span></span><br><span class="line"><span class="comment">// 程序执行完毕。</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>路耀广</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://luyaoguang1992.github.io/nodeAPI/EventEmitter/">https://luyaoguang1992.github.io/nodeAPI/EventEmitter/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/nodeAPI/childProcess/"></a>
+            
+            
+            <a class="next" rel="next" href="/nodeAPI/Buffer/"></a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 路耀广 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

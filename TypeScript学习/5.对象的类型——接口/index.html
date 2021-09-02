@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="路耀广">
+
+
+
+    <meta name="description" content="路耀广的个人博客">
+
+
+    <meta name="keywords" content="路耀广">
+
+
+<title>路耀广的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Luyaoguang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Luyaoguang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title"></h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">路耀广</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">九月 2, 2021&nbsp;&nbsp;19:04:40</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="对象的类型——接口"><a href="#对象的类型——接口" class="headerlink" title="对象的类型——接口"></a>对象的类型——接口</h3><p>在Ts中，我们使用接口(interfaces)来定义对象的类型</p>
+<h4 id="什么是接口"><a href="#什么是接口" class="headerlink" title="什么是接口"></a>什么是接口</h4><p>在面对对象的语言中，接口(interfaces)是一个很重要的概念，它是对<strong>行为的抽象</strong>，而具体如何行动需要有类(classes)去是实现(implement)。</p>
+<p>Ts中的接口是一个非常灵活的概念，除了可用于<strong>对类的一部分行为进行抽象</strong>体外，也常用于对**[对象的形状]**进行描述。</p>
+<h4 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age: number;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    age: 25</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>上面的例子中，我们定义了一个接口<strong>Person</strong>，接着定义了一个变量<strong>tom</strong>，它的类型是<strong>Person</strong>。这样，我们就约束了<strong>tom</strong>的形状必须和接口<strong>Person</strong>一致。</p>
+<p>接口一般首字母大写。<a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/8bc1fexb%28v=vs.71%29.aspx">有的编程语言中会建议接口的名称加上I前缀</a>。</p>
+<p>定义的变量比接口少了一些属性是不允许的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age: number;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">// index.ts(6,5): error TS2322: Type &#x27;&#123; name: string; &#125;&#x27; is not assignable to type &#x27;Person&#x27;.</span><br><span class="line">//   Property &#x27;age&#x27; is missing in type &#x27;&#123; name: string; &#125;&#x27;.</span><br></pre></td></tr></table></figure>
+
+<p>多一些属性也是不允许的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age: number;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    age: 25,</span><br><span class="line">    gender: &#x27;male&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">// index.ts(9,5): error TS2322: Type &#x27;&#123; name: string; age: number; gender: string; &#125;&#x27; is not assignable to type &#x27;Person&#x27;.</span><br><span class="line">// Object literal may only specify known properties, and &#x27;gender&#x27; does not exist in type &#x27;Person&#x27;.</span><br></pre></td></tr></table></figure>
+
+<p>可见，<strong>赋值的时候，变量的形状必须和接口的形状保持一致。</strong></p>
+<h4 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h4><p>有时候，我们希望不要完全匹配一个形状，那么可以使用可选属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">let peter: Person = &#123;</span><br><span class="line">    name: &#x27;peter&#x27;,</span><br><span class="line">    age: 25</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>可选属性的含义是该属性可以不存在。</p>
+<p>但是此时<strong>仍然不允许添加未定义的属性</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    age: 25,</span><br><span class="line">    gender: &#x27;male&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">// examples/playground/index.ts(9,5): error TS2322: Type &#x27;&#123; name: string; age: number; gender: string; &#125;&#x27; is not assignable to type &#x27;Person&#x27;.</span><br><span class="line">// Object literal may only specify known properties, and &#x27;gender&#x27; does not exist in type &#x27;Person&#x27;.</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="任意属性"><a href="#任意属性" class="headerlink" title="任意属性"></a>任意属性</h4><p>有时候我们希望一个接口允许有任意的属性，可以使用如下方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [x: string]: any;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    gender: &#x27;male&#x27;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>使用**[x: string]<strong>定义了任意属性取</strong>string**类型的值。</p>
+<p>需要注意的是，<strong>一旦定义了任意属性，那么确定属性和可选属性的类型都必须是它的类型的子集：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [x: string]: string;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    age: 25,</span><br><span class="line">    gender: &#x27;male&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">// index.ts(3,5): error TS2411: Property &#x27;age&#x27; of type &#x27;number&#x27; is not assignable to string index type &#x27;string&#x27;.</span><br><span class="line">// index.ts(7,5): error TS2322: Type &#x27;&#123; [x: string]: string | number; name: string; age: number; gender: string; &#125;&#x27; is not assignable to type &#x27;Person&#x27;.</span><br><span class="line">//  Index signatures are incompatible.</span><br><span class="line">//  Type &#x27;string | number&#x27; is not assignable to type &#x27;string&#x27;.</span><br><span class="line">//  Type &#x27;number&#x27; is not assignable to type &#x27;string&#x27;.</span><br></pre></td></tr></table></figure>
+
+<p>上例中，任意属性的值允许是<strong>string</strong>，但是可选属性<strong>age</strong>的值却是<strong>number</strong>，<strong>number</strong>不是<strong>string</strong>的子属性，所以报错了。</p>
+<p>一个接口中只能定义一个任意属性。如果接口中有多个类型的属性，则可以在任意属性中使用<strong>联合类型</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: string | number;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    age: 25,</span><br><span class="line">    gender: &#x27;male&#x27;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h4><p>有时候我们希望对象中的一些字段只能在创建的时候被赋值，那么可以用<strong>readonly</strong>定义只读属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    readonly id: number;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: any;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    id: 89757,</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    gender: &#x27;male&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">tom.id = 9527;</span><br><span class="line">// index.ts(14,5): error TS2540: Cannot assign to &#x27;id&#x27; because it is a constant or a read-only property.</span><br></pre></td></tr></table></figure>
+
+<p>上例中，使用了<strong>readonly</strong>定义的属性<strong>id</strong>初始化后，又被赋值了，所以报错了。</p>
+<p><strong>注意，只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    readonly id: number;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: any;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &#x27;Tom&#x27;,</span><br><span class="line">    gender: &#x27;male&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">tom.id = 89757;</span><br><span class="line">// index.ts(8,5): error TS2322: Type &#x27;&#123; name: string; gender: string; &#125;&#x27; is not assignable to type &#x27;Person&#x27;.</span><br><span class="line">// Property &#x27;id&#x27; is missing in type &#x27;&#123; name: string; gender: string; &#125;&#x27;.</span><br><span class="line">// index.ts(13,5): error TS2540: Cannot assign to &#x27;id&#x27; because it is a constant or a read-only property.</span><br></pre></td></tr></table></figure>
+
+<p>上例中的报错信息有两处</p>
+<ul>
+<li>在对tom进行赋值时，没有给<strong>id</strong>赋值</li>
+<li>在给tom.id赋值的时候，由于它是只读的，所以又报错</li>
+</ul>
+<h3 id="类实现接口"><a href="#类实现接口" class="headerlink" title="类实现接口"></a>类实现接口</h3><p>实现(implements)是面对对象中的一个重要概念。一般来讲，一个类只能继承自另一个类，有时候不同类之间可以有一些共有特性，这时候就可以把特性提取成接口(interfaces)，用<strong>implements</strong>关键字来实现。这个特性大大提高了面对对象的灵活性。</p>
+<p>举例来说，门是一个类，防盗门是门的子类。如果防盗门有一个报警器的功能，我们可以简单的给防盗门添加一个报警方法。这时候如果有另一个类，车，它也有报警器的功能。就可以考虑把报警器提取出来，作为一个接口，防盗门和车都去实现它。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Alarm &#123;</span><br><span class="line">  alert():void;</span><br><span class="line">&#125;</span><br><span class="line">class Door &#123;&#125;</span><br><span class="line">class SecurityDoor extends Door implements Alarm &#123;</span><br><span class="line">  alert() &#123;</span><br><span class="line">    console.log(&#x27;SecurityDoor alert&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Car implements Alarm &#123;</span><br><span class="line">  alert() &#123;</span><br><span class="line">    console.log(&#x27;Car alert&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个类可以实现多个接口：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Alarm &#123;</span><br><span class="line">  alert():void;</span><br><span class="line">&#125;</span><br><span class="line">interface Light &#123;</span><br><span class="line">  lightOn():void;</span><br><span class="line">  lightOff():void;</span><br><span class="line">&#125;</span><br><span class="line">class Car implements Alarm,Light &#123;</span><br><span class="line">  alert() &#123;</span><br><span class="line">    console.log(&#x27;Car alert&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line">  lightOn() &#123;</span><br><span class="line">    console.log(&#x27;Car light on&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line">  lightOff() &#123;</span><br><span class="line">    console.log(&#x27;Car light off&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上例中，Car实现了Alarm和Light接口，既能报警，也能开关车灯</p>
+<h4 id="接口继承接口"><a href="#接口继承接口" class="headerlink" title="接口继承接口"></a>接口继承接口</h4><p>接口与接口之间可以是继承关系</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface Alarm &#123;</span><br><span class="line">  alert(): void;</span><br><span class="line">&#125;</span><br><span class="line">interface LightableAlarm extends Alarm &#123;</span><br><span class="line">  lightOn(): void;</span><br><span class="line">  lightOff(): void;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>LightableAlarm</strong>继承了<strong>Alarm</strong>，除了拥有<strong>alert</strong>方法之外，还拥有了两个新方法<strong>lightOn</strong>和<strong>lightOff</strong>。</p>
+<h4 id="接口继承类"><a href="#接口继承类" class="headerlink" title="接口继承类"></a>接口继承类</h4><p>常见的面对对象语言中，接口是不能继承类的，但是Ts中却是可以的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  x:number;</span><br><span class="line">  y:number;</span><br><span class="line">  constructor(x:number,y:number) &#123;</span><br><span class="line">    this.x = x;</span><br><span class="line">    this.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface Point3d extends Point &#123;</span><br><span class="line">  z:number</span><br><span class="line">&#125;</span><br><span class="line">let point3d: Point3d = &#123;x:1, y:2, z:3&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>为什么Ts会支持接口继承类呢？</p>
+<p>实际上，当我们声明<strong>class Point</strong>时，除了会创建一个名为<strong>Point</strong>的类之外，同时也创建了一个名为<strong>Point</strong>的类型(实例的类型)。</p>
+<p>所以我们既可以将<strong>Point</strong>当作一个类来用(使用<strong>new Point</strong>创建它的实例)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">    x: number;</span><br><span class="line">    y: number;</span><br><span class="line">    constructor(x: number, y: number) &#123;</span><br><span class="line">        this.x = x;</span><br><span class="line">        this.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const p = new Point(1, 2);</span><br></pre></td></tr></table></figure>
+
+<p>也可以将<strong>Point</strong>当作一个类型来用(使用**:Point**表示参数的类型)。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">    x: number;</span><br><span class="line">    y: number;</span><br><span class="line">    constructor(x: number, y: number) &#123;</span><br><span class="line">        this.x = x;</span><br><span class="line">        this.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function printPoint(p: Point) &#123;</span><br><span class="line">    console.log(p.x, p.y);</span><br><span class="line">&#125;</span><br><span class="line">printPoint(new Point(1, 2));</span><br></pre></td></tr></table></figure>
+
+<p>这个例子实际上可以等价于：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">    x: number;</span><br><span class="line">    y: number;</span><br><span class="line">    constructor(x: number, y: number) &#123;</span><br><span class="line">        this.x = x;</span><br><span class="line">        this.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface PointInstanceType &#123;</span><br><span class="line">    x: number;</span><br><span class="line">    y: number;</span><br><span class="line">&#125;</span><br><span class="line">function printPoint(p: PointInstanceType) &#123;</span><br><span class="line">    console.log(p.x, p.y);</span><br><span class="line">&#125;</span><br><span class="line">printPoint(new Point(1, 2));</span><br></pre></td></tr></table></figure>
+
+<p>上例中我们新声明的<strong>PointInstanceType</strong>类型，与声明<strong>class Point</strong>时创建的<strong>Point</strong>类型是等价的。</p>
+<p>所以回到<strong>Point3d</strong>的例子中，我们就能很容易的理解为什么Ts会支持接口继承类了：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">    x: number;</span><br><span class="line">    y: number;</span><br><span class="line">    constructor(x: number, y: number) &#123;</span><br><span class="line">        this.x = x;</span><br><span class="line">        this.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface PointInstanceType &#123;</span><br><span class="line">    x: number;</span><br><span class="line">    y: number;</span><br><span class="line">&#125;</span><br><span class="line">// 等价于 interface Point3d extends PointInstanceType</span><br><span class="line">interface Point3d extends Point &#123;</span><br><span class="line">    z: number;</span><br><span class="line">&#125;</span><br><span class="line">let point3d: Point3d = &#123;x: 1, y: 2, z: 3&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>当我们声明<strong>interface Point3d extends Point</strong>时，<strong>Point3d</strong>继承的实际上是类<strong>Point</strong>的实例的类型。</p>
+<p>换句话说，可以理解为定义了一个接口<strong>Point3d</strong>继承另外一个接口<strong>PointInstanceType</strong>。</p>
+<p>所以**[接口继承类]<strong>和</strong>[接口继承接口]**没有本质的区别。</p>
+<p>值得注意的是，<strong>PointInstanceType</strong>相比于<strong>Point</strong>，缺少了<strong>constructor</strong>方法，这是因为声明<strong>Point</strong>类时创建的<strong>Point</strong>类型是不包含构造函数的。另外除了构造函数不是被包含的，<strong>静态属性</strong>和<strong>静态方法</strong>也是不包含的。</p>
+<p>换句话说，声明<strong>Point</strong>类时创建的<strong>Ponit</strong>类型只包含其中的<strong>实例属性</strong>和<strong>实例方法</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">    /** 静态属性，坐标系原点 */</span><br><span class="line">    static origin = new Point(0, 0);</span><br><span class="line">    /** 静态方法，计算与原点距离 */</span><br><span class="line">    static distanceToOrigin(p: Point) &#123;</span><br><span class="line">        return Math.sqrt(p.x * p.x + p.y * p.y);</span><br><span class="line">    &#125;</span><br><span class="line">    /** 实例属性，x 轴的值 */</span><br><span class="line">    x: number;</span><br><span class="line">    /** 实例属性，y 轴的值 */</span><br><span class="line">    y: number;</span><br><span class="line">    /** 构造函数 */</span><br><span class="line">    constructor(x: number, y: number) &#123;</span><br><span class="line">        this.x = x;</span><br><span class="line">        this.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    /** 实例方法，打印此点 */</span><br><span class="line">    printPoint() &#123;</span><br><span class="line">        console.log(this.x, this.y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">interface PointInstanceType &#123;</span><br><span class="line">    x: number;</span><br><span class="line">    y: number;</span><br><span class="line">    printPoint(): void;</span><br><span class="line">&#125;</span><br><span class="line">let p1: Point;</span><br><span class="line">let p2: PointInstanceType;</span><br></pre></td></tr></table></figure>
+
+
+
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>路耀广</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://luyaoguang1992.github.io/TypeScript%E5%AD%A6%E4%B9%A0/5.%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%8E%A5%E5%8F%A3/">https://luyaoguang1992.github.io/TypeScript%E5%AD%A6%E4%B9%A0/5.%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%8E%A5%E5%8F%A3/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/TypeScript%E5%AD%A6%E4%B9%A0/6.%E6%95%B0%E7%BB%84%E7%9A%84%E7%B1%BB%E5%9E%8B/"></a>
+            
+            
+            <a class="next" rel="next" href="/TypeScript%E5%AD%A6%E4%B9%A0/4.%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B/"></a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 路耀广 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="路耀广">
+
+
+
+    <meta name="description" content="路耀广的个人博客">
+
+
+    <meta name="keywords" content="路耀广">
+
+
+<title>路耀广的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Luyaoguang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Luyaoguang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title"></h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">路耀广</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">九月 2, 2021&nbsp;&nbsp;19:04:29</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="path模块"><a href="#path模块" class="headerlink" title="path模块"></a>path模块</h2><h3 id="path-sep"><a href="#path-sep" class="headerlink" title="path.sep"></a>path.sep</h3><p>提供特定平台的<strong>路径片段分隔符</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//POSIX</span></span><br><span class="line"><span class="string">&#x27;foo/bar/baz&#x27;</span>.split(path.sep);</span><br><span class="line"><span class="comment">// 返回: [&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//WINDOWS</span></span><br><span class="line"><span class="string">&#x27;foo\\bar\\baz&#x27;</span>.split(path.sep);</span><br><span class="line"><span class="comment">// 返回: [&#x27;foo&#x27;, &#x27;bar&#x27;, &#x27;baz&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-basename-path-ext"><a href="#path-basename-path-ext" class="headerlink" title="path.basename( path [,  ext ] )"></a>path.basename( path [,  ext ] )</h3><p>path.basename会返回path的文件名部分，指定扩展名会被忽略</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.basename(<span class="string">&#x27;/foo/bar/baz/asdf/quux.html&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;quux.html&#x27;</span></span><br><span class="line">path.basename(<span class="string">&#x27;/foo/bar/baz/asdf/quux.html&#x27;</span>, <span class="string">&#x27;.html&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;quux&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>windows通常不区分大小写的方式来处理文件名(包括文件扩展名)，单此函数会区分</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.win32.basename(<span class="string">&#x27;C:\\foo.html&#x27;</span>, <span class="string">&#x27;.html&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;foo&#x27;</span></span><br><span class="line">path.win32.basename(<span class="string">&#x27;C:\\foo.HTML&#x27;</span>, <span class="string">&#x27;.html&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;foo.HTML&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果传入的<strong>path</strong>或者给定的<strong>ext</strong>不是字符串，则抛出<strong>TypeError</strong>。</p>
+<h3 id="path-delimiter"><a href="#path-delimiter" class="headerlink" title="path.delimiter"></a>path.delimiter</h3><p>提供特定于平台的路径定界符</p>
+<p>Window:  <strong>;</strong>   POSIX:   <strong>:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//WINDOWS</span></span><br><span class="line"><span class="built_in">console</span>.log(process.env.PATH);</span><br><span class="line"><span class="comment">// 打印: &#x27;C:\Windows\system32;C:\Windows;C:\Program Files\node\&#x27;</span></span><br><span class="line">process.env.PATH.split(path.delimiter);</span><br><span class="line"><span class="comment">// 返回: [&#x27;C:\\Windows\\system32&#x27;, &#x27;C:\\Windows&#x27;, &#x27;C:\\Program Files\\node\\&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//POSIX</span></span><br><span class="line"><span class="built_in">console</span>.log(process.env.PATH);</span><br><span class="line"><span class="comment">// 打印: &#x27;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin&#x27;</span></span><br><span class="line">process.env.PATH.split(path.delimiter);</span><br><span class="line"><span class="comment">// 返回: [&#x27;/usr/bin&#x27;, &#x27;/bin&#x27;, &#x27;/usr/sbin&#x27;, &#x27;/sbin&#x27;, &#x27;/usr/local/bin&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-dirname-path"><a href="#path-dirname-path" class="headerlink" title="path.dirname(path)"></a>path.dirname(path)</h3><p>返回文件路径</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.dirname(<span class="string">&#x27;/foo/bar/baz/asdf/quux&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;/foo/bar/baz/asdf&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果传入的<strong>path</strong>不是字符串，则抛出<strong>TypeError</strong>。</p>
+<h3 id="path-extname-path"><a href="#path-extname-path" class="headerlink" title="path.extname(path)"></a>path.extname(path)</h3><p>返回扩展名</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.extname(<span class="string">&#x27;index.html&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;.html&#x27;</span></span><br><span class="line">path.extname(<span class="string">&#x27;index.coffee.md&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;.md&#x27;</span></span><br><span class="line">path.extname(<span class="string">&#x27;index.&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;.&#x27;</span></span><br><span class="line">path.extname(<span class="string">&#x27;index&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;&#x27;</span></span><br><span class="line">path.extname(<span class="string">&#x27;.index&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;&#x27;</span></span><br><span class="line">path.extname(<span class="string">&#x27;.index.md&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;.md&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-format-pathObject"><a href="#path-format-pathObject" class="headerlink" title="path.format(pathObject)"></a>path.format(pathObject)</h3><p>从对象返回路径字符串，与**path.parse()**功能正好相反</p>
+<p>pathObject参数为</p>
+<ul>
+<li>dir    高优先级</li>
+<li>root </li>
+<li>base  高优先级</li>
+<li>name </li>
+<li>ext </li>
+</ul>
+<p>当向<strong>pathObject</strong>提供属性时，存在一个属性优先于另一个属性的组合：</p>
+<ul>
+<li>如果提供了<strong>dir</strong>，则忽略<strong>root</strong></li>
+<li>如果<strong>base</strong>存在，则忽略<strong>ext</strong>和<strong>name</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果提供了dir则会忽略root</span></span><br><span class="line">path.format(&#123;</span><br><span class="line">  <span class="attr">root</span>:<span class="string">&#x27;/ignored&#x27;</span>,</span><br><span class="line">  <span class="attr">dir</span>:<span class="string">&#x27;/home/user/dir&#x27;</span>,</span><br><span class="line">  <span class="attr">base</span>:<span class="string">&#x27;file.txt&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//返回 /home/user/dir/file.txt</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果base存在 则忽略ext和name</span></span><br><span class="line">path.format(&#123;</span><br><span class="line">  <span class="attr">root</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&#x27;file.txt&#x27;</span>,</span><br><span class="line">  <span class="attr">ext</span>: <span class="string">&#x27;ignored&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 返回: &#x27;/file.txt&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果未指定 `base`，则将使用 `name` + `ext`。</span></span><br><span class="line">path.format(&#123;</span><br><span class="line">  <span class="attr">root</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;file&#x27;</span>,</span><br><span class="line">  <span class="attr">ext</span>: <span class="string">&#x27;.txt&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 返回: &#x27;/file.txt&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-isAbsolute-path"><a href="#path-isAbsolute-path" class="headerlink" title="path.isAbsolute(path)"></a>path.isAbsolute(path)</h3><p>判断是否为绝对路径</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.isAbsolute(<span class="string">&#x27;/foo/bar&#x27;</span>); <span class="comment">// true</span></span><br><span class="line">path.isAbsolute(<span class="string">&#x27;/baz/..&#x27;</span>);  <span class="comment">// true</span></span><br><span class="line">path.isAbsolute(<span class="string">&#x27;qux/&#x27;</span>);     <span class="comment">// false</span></span><br><span class="line">path.isAbsolute(<span class="string">&#x27;.&#x27;</span>);        <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-join-…paths"><a href="#path-join-…paths" class="headerlink" title="path.join([…paths])"></a>path.join([…paths])</h3><p>使用特定平台的分隔符作为定界符，将所有给定的path片段连接在一起，然后生成规范化的路径</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.join(<span class="string">&#x27;/foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz/asdf&#x27;</span>, <span class="string">&#x27;quux&#x27;</span>, <span class="string">&#x27;..&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;/foo/bar/baz/asdf&#x27;</span></span><br><span class="line">path.join(<span class="string">&#x27;foo&#x27;</span>, &#123;&#125;, <span class="string">&#x27;bar&#x27;</span>);</span><br><span class="line"><span class="comment">// 抛出 &#x27;TypeError: Path must be a string. Received &#123;&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-normalize-path"><a href="#path-normalize-path" class="headerlink" title="path.normalize(path)"></a>path.normalize(path)</h3><p>规范化给定的path，解析”..”和”.”片段</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//POSIX</span></span><br><span class="line">path.normalize(<span class="string">&#x27;/foo/bar//baz/asdf/quux/..&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;/foo/bar/baz/asdf&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//WIDOWS</span></span><br><span class="line">path.normalize(<span class="string">&#x27;C:\\temp\\\\foo\\bar\\..\\&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;C:\\temp\\foo\\&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-parse-path"><a href="#path-parse-path" class="headerlink" title="path.parse(path)"></a>path.parse(path)</h3><p>根据path返回一个对象，表示path的重要元素。返回对象详情参见 <a href="###path.format">path.foramt</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//POSIX</span></span><br><span class="line">path.parse(<span class="string">&#x27;/home/user/dir/file.txt&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回:</span></span><br><span class="line"><span class="comment">// &#123; </span></span><br><span class="line"><span class="comment">//	 root: &#x27;/&#x27;,</span></span><br><span class="line"><span class="comment">//   dir: &#x27;/home/user/dir&#x27;,</span></span><br><span class="line"><span class="comment">//   base: &#x27;file.txt&#x27;,</span></span><br><span class="line"><span class="comment">//   ext: &#x27;.txt&#x27;,</span></span><br><span class="line"><span class="comment">//   name: &#x27;file&#x27; </span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">┌─────────────────────┬────────────┐</span><br><span class="line">│          dir        │    base    │</span><br><span class="line">├──────┬              ├──────┬─────┤</span><br><span class="line">│ root │              │ name │ ext │</span><br><span class="line"><span class="string">&quot;  /    home/user/dir / file  .txt &quot;</span></span><br><span class="line">└──────┴──────────────┴──────┴─────┘</span><br><span class="line"></span><br><span class="line"><span class="comment">//WINDOWS</span></span><br><span class="line">path.parse(<span class="string">&#x27;C:\\path\\dir\\file.txt&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回:</span></span><br><span class="line"><span class="comment">// &#123; </span></span><br><span class="line"><span class="comment">//	 root: &#x27;C:\\&#x27;,</span></span><br><span class="line"><span class="comment">//   dir: &#x27;C:\\path\\dir&#x27;,</span></span><br><span class="line"><span class="comment">//   base: &#x27;file.txt&#x27;,</span></span><br><span class="line"><span class="comment">//   ext: &#x27;.txt&#x27;,</span></span><br><span class="line"><span class="comment">//   name: &#x27;file&#x27; </span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">┌─────────────────────┬────────────┐</span><br><span class="line">│          dir        │    base    │</span><br><span class="line">├──────┬              ├──────┬─────┤</span><br><span class="line">│ root │              │ name │ ext │</span><br><span class="line"><span class="string">&quot; C:\      path\dir   \ file  .txt &quot;</span></span><br><span class="line">└──────┴──────────────┴──────┴─────┘</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-relative-from-to"><a href="#path-relative-from-to" class="headerlink" title="path.relative(from, to)"></a>path.relative(from, to)</h3><p>据当前工作目录返回从 <code>from</code> 到 <code>to</code> 的相对路径。 如果 <code>from</code> 和 <code>to</code> 都解析为相同的路径（在分别调用 <code>path.resolve()</code> 之后），则返回零长度字符串。</p>
+<p>如果零长度字符串作为 <code>from</code> 或 <code>to</code> 传入，则将使用当前工作目录而不是零长度字符串。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.relative(<span class="string">&#x27;/data/orandea/test/aaa&#x27;</span>, <span class="string">&#x27;/data/orandea/impl/bbb&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;../../impl/bbb&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="path-resolve-…paths"><a href="#path-resolve-…paths" class="headerlink" title="path.resolve([…paths])"></a>path.resolve([…paths])</h3><p><code>path.resolve()</code> 方法将路径或路径片段的序列解析为绝对路径。</p>
+<p>给定的路径序列<strong>从右到左处理</strong>，每个后续的 <code>path</code> 会被追加到前面，直到构建绝对路径。 例如，给定路径片段的序列：<code>/foo</code>、<code>/bar</code>、<code>baz</code>，调用 <code>path.resolve(&#39;/foo&#39;, &#39;/bar&#39;, &#39;baz&#39;)</code> 将返回 <code>/bar/baz</code>，因为 <code>&#39;baz&#39;</code> 不是绝对路径，而 <code>&#39;/bar&#39; + &#39;/&#39; + &#39;baz&#39;</code> 是。</p>
+<p>如果在处理完所有给定的 <code>path</code> 片段之后，还没有生成绝对路径，则使用当前工作目录。</p>
+<p>生成的路径被规范化，并删除尾部斜杠（除非路径解析为根目录）。</p>
+<p>零长度的 <code>path</code> 片段被忽略。</p>
+<p>如果没有传入 <code>path</code> 片段，则 <code>path.resolve()</code> 将返回当前工作目录的绝对路径。</p>
+<p><strong>从右到左匹配到一个绝对路径地址就停止</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.resolve(<span class="string">&#x27;/foo/bar&#x27;</span>, <span class="string">&#x27;./baz&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;/foo/bar/baz&#x27;</span></span><br><span class="line">path.resolve(<span class="string">&#x27;/foo/bar&#x27;</span>, <span class="string">&#x27;/tmp/file/&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回: &#x27;/tmp/file&#x27;</span></span><br><span class="line">path.resolve(<span class="string">&#x27;wwwroot&#x27;</span>, <span class="string">&#x27;static_files/png/&#x27;</span>, <span class="string">&#x27;../gif/image.gif&#x27;</span>);</span><br><span class="line"><span class="comment">// 如果当前工作目录是 /home/myself/node，</span></span><br><span class="line"><span class="comment">// 则返回 &#x27;/home/myself/node/wwwroot/static_files/gif/image.gif&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>路耀广</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://luyaoguang1992.github.io/nodeAPI/path%E6%A8%A1%E5%9D%97/">https://luyaoguang1992.github.io/nodeAPI/path%E6%A8%A1%E5%9D%97/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/nodeAPI/process%E6%A8%A1%E5%9D%97/"></a>
+            
+            
+            <a class="next" rel="next" href="/nodeAPI/fs%E6%A8%A1%E5%9D%97/"></a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 路耀广 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
